@@ -62,7 +62,7 @@ def read_from_book(id):
         Key={
             'id': id
         },
-        AttributesToGet=['title', 'description', 'author', 'publisher', 'year', 'isbn']
+        AttributesToGet=['title', 'description', 'author', 'publisher', 'year', 'isbn', 'upvotes']
     )
     return response
 
