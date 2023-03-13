@@ -73,7 +73,8 @@ def book_detail(request, pk):
         return JsonResponse({'message': 'Error while updating'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     elif request.method == 'DELETE':
-        if response['ResponseMetadata']['HTTPStatusCode'] == 200:
-            return JsonResponse({'message': 'Book was deleted successfully!', 'Item': response['Item']},
+        book = dynamodb.delete_from_book(pk)
+        if book['ResponseMetadata']['HTTPStatusCode'] == 200:
+            return JsonResponse({'message': 'Book was deleted successfully!'},
                                 status=status.HTTP_204_NO_CONTENT)
         return JsonResponse({'message': 'Error while deletion'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
