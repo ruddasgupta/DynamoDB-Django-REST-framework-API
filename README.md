@@ -31,7 +31,7 @@
 
 ### Install AWS CLI
 
-> curl -H 'Accept: application/json; indent=4' -u admin:password123 http://127.0.0.1:8000/users/
+> sudo pip install awscli --force-reinstall --upgrade
 
 ### Show Tables
 
