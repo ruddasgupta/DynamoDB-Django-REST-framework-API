@@ -29,6 +29,10 @@
 
 >  java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
 
+### Install AWS CLI
+
+> curl -H 'Accept: application/json; indent=4' -u admin:password123 http://127.0.0.1:8000/users/
+
 ### Show Tables
 
 >  aws dynamodb list-tables --endpoint-url http://localhost:8000
